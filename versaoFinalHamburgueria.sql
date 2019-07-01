@@ -200,6 +200,18 @@ SELECT *FROM pagamento
 SELECT *FROM pedido
 SELECT *FROM produto
 
+SELECT nome_cliente, 
+FROM cliente
+WHERE nome_cliente LIKE 'E%'
+
+SELECT valor_pedido
+FROM pedido
+WHERE valor_pedido BETWEEN 20 AND 40
+
+SELECT nome_cliente, 
+FROM
+ORDER BY
+ORDER BY
 
 
 
