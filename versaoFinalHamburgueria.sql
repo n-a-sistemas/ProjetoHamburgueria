@@ -1,3 +1,6 @@
+CREATE DATABASE Hamburgueria
+
+
 CREATE TABLE cliente (
 cod_cliente SMALLINT IDENTITY NOT NULL,
 nome_cliente VARCHAR (50),
@@ -167,6 +170,41 @@ INSERT INTO item_pedido VALUES(2,4,22.50)
 INSERT INTO item_pedido VALUES(4,2,20.50)
 INSERT INTO item_pedido VALUES(5,1,21.50)
 INSERT INTO item_pedido VALUES(3,5,5.50)
+
+ALTER TABLE bebida
+ADD quantidade_minima SMALLINT
+
+ALTER TABLE bebida
+ALTER COLUMN quantidade_minima SMALLINT NOT NULL
+
+
+SELECT *FROM produto
+
+INSERT INTO comida VALUES (1,'Lanche','Pão,Muçarela,Alface,Tomate')
+INSERT INTO comida VALUES (2,'Lanche','Pão,Bacon,Alface,Tomate,Ketchup')
+INSERT INTO comida VALUES (3,'Lanche','Pão,Frango,Alface,Tomate')
+INSERT INTO comida VALUES (4,'Lanche','Pão,Catupiry,Carne')
+
+INSERT INTO bebida VALUES (5,'Refrigerante','50','30')
+INSERT INTO bebida VALUES (6,'Refrigerante','45','30')
+INSERT INTO bebida VALUES (7,'Refrigerante','35','30')
+INSERT INTO bebida VALUES (8,'Cerveja','50','30')
+INSERT INTO bebida VALUES (9,'Cerveja','70','30')
+
+SELECT *FROM bebida
+SELECT *FROM cliente
+SELECT *FROM comida
+SELECT *FROM garcom
+SELECT *FROM item_pedido
+SELECT *FROM pagamento
+SELECT *FROM pedido
+SELECT *FROM produto
+
+
+
+
+
+
 
 
 
