@@ -41,16 +41,16 @@
             this.nudPreco_produto = new System.Windows.Forms.NumericUpDown();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.cmbBebida = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudQuantidademinima = new System.Windows.Forms.NumericUpDown();
             this.labelQuantidade_minima = new System.Windows.Forms.Label();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
-            this.rdbEntrada_produtos = new System.Windows.Forms.RadioButton();
             this.nudEntrada_produto = new System.Windows.Forms.NumericUpDown();
+            this.rdbEntrada_produtos = new System.Windows.Forms.RadioButton();
             this.labelQuantidade_maxima = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco_produto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidademinima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEntrada_produto)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +116,6 @@
             this.txtDescricao_produto.Name = "txtDescricao_produto";
             this.txtDescricao_produto.Size = new System.Drawing.Size(592, 24);
             this.txtDescricao_produto.TabIndex = 13;
-            this.txtDescricao_produto.Visible = false;
             // 
             // groupBox1
             // 
@@ -136,7 +135,6 @@
             this.rdbBebida.Name = "rdbBebida";
             this.rdbBebida.Size = new System.Drawing.Size(58, 17);
             this.rdbBebida.TabIndex = 1;
-            this.rdbBebida.TabStop = true;
             this.rdbBebida.Text = "Bebida";
             this.rdbBebida.UseVisualStyleBackColor = true;
             this.rdbBebida.CheckedChanged += new System.EventHandler(this.rdbBebida_CheckedChanged);
@@ -144,10 +142,12 @@
             // rdbComida
             // 
             this.rdbComida.AutoSize = true;
+            this.rdbComida.Checked = true;
             this.rdbComida.Location = new System.Drawing.Point(5, 44);
             this.rdbComida.Name = "rdbComida";
             this.rdbComida.Size = new System.Drawing.Size(60, 17);
             this.rdbComida.TabIndex = 0;
+            this.rdbComida.TabStop = true;
             this.rdbComida.Text = "Comida";
             this.rdbComida.UseVisualStyleBackColor = true;
             this.rdbComida.CheckedChanged += new System.EventHandler(this.rdbComida_CheckedChanged_1);
@@ -172,7 +172,6 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(121, 21);
             this.cmbCategoria.TabIndex = 16;
-            this.cmbCategoria.Visible = false;
             // 
             // cmbBebida
             // 
@@ -192,13 +191,13 @@
             this.cmbBebida.TabIndex = 17;
             this.cmbBebida.Visible = false;
             // 
-            // numericUpDown1
+            // nudQuantidademinima
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(511, 98);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(80, 20);
-            this.numericUpDown1.TabIndex = 18;
-            this.numericUpDown1.Visible = false;
+            this.nudQuantidademinima.Location = new System.Drawing.Point(511, 98);
+            this.nudQuantidademinima.Name = "nudQuantidademinima";
+            this.nudQuantidademinima.Size = new System.Drawing.Size(80, 20);
+            this.nudQuantidademinima.TabIndex = 18;
+            this.nudQuantidademinima.Visible = false;
             // 
             // labelQuantidade_minima
             // 
@@ -219,6 +218,14 @@
             this.dgvEstoque.Size = new System.Drawing.Size(592, 148);
             this.dgvEstoque.TabIndex = 21;
             // 
+            // nudEntrada_produto
+            // 
+            this.nudEntrada_produto.Location = new System.Drawing.Point(88, 242);
+            this.nudEntrada_produto.Name = "nudEntrada_produto";
+            this.nudEntrada_produto.Size = new System.Drawing.Size(80, 20);
+            this.nudEntrada_produto.TabIndex = 23;
+            this.nudEntrada_produto.Visible = false;
+            // 
             // rdbEntrada_produtos
             // 
             this.rdbEntrada_produtos.AutoSize = true;
@@ -231,14 +238,6 @@
             this.rdbEntrada_produtos.UseVisualStyleBackColor = true;
             this.rdbEntrada_produtos.Visible = false;
             this.rdbEntrada_produtos.CheckedChanged += new System.EventHandler(this.rdbEntrada_produtos_CheckedChanged);
-            // 
-            // nudEntrada_produto
-            // 
-            this.nudEntrada_produto.Location = new System.Drawing.Point(88, 242);
-            this.nudEntrada_produto.Name = "nudEntrada_produto";
-            this.nudEntrada_produto.Size = new System.Drawing.Size(80, 20);
-            this.nudEntrada_produto.TabIndex = 23;
-            this.nudEntrada_produto.Visible = false;
             // 
             // labelQuantidade_maxima
             // 
@@ -270,7 +269,7 @@
             this.Controls.Add(this.rdbEntrada_produtos);
             this.Controls.Add(this.dgvEstoque);
             this.Controls.Add(this.labelQuantidade_minima);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudQuantidademinima);
             this.Controls.Add(this.cmbBebida);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.nudPreco_produto);
@@ -287,7 +286,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco_produto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidademinima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEntrada_produto)).EndInit();
             this.ResumeLayout(false);
@@ -309,11 +308,11 @@
         private System.Windows.Forms.NumericUpDown nudPreco_produto;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.ComboBox cmbBebida;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudQuantidademinima;
         private System.Windows.Forms.Label labelQuantidade_minima;
         private System.Windows.Forms.DataGridView dgvEstoque;
-        private System.Windows.Forms.RadioButton rdbEntrada_produtos;
         private System.Windows.Forms.NumericUpDown nudEntrada_produto;
+        private System.Windows.Forms.RadioButton rdbEntrada_produtos;
         private System.Windows.Forms.Label labelQuantidade_maxima;
         private System.Windows.Forms.TextBox txtQuantidade;
     }

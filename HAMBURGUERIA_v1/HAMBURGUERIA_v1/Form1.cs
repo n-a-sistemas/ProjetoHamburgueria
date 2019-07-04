@@ -15,25 +15,58 @@ namespace HAMBURGUERIA_v1
         public Form1()
         {
             InitializeComponent();
+
         }
+
+        int id_produto;
+        
 
         private void BtnSalvar_produto_Click(object sender, EventArgs e)
         {
-
- 
-
+            
             Produto produto = new Produto();
 
             produto.Nome_produto = txtNome_produto.Text;
             produto.Valor_produto = Convert.ToDecimal(nudPreco_produto.Text) ;
             produto.Descricao_produto = txtDescricao_produto.Text;
+          
+            id_produto = produto.Adicionar();
 
+            if (rdbComida.Checked)
+            {
+                Adiciona_Comida();
 
-            produto.Adicionar();
+            }
+            else
+            {
+                Adiciona_Bebida();
+            }
 
-
+            LimpaCampos();
+            
 
         }
+
+
+        private void Adiciona_Comida()
+        {
+            Produto produto = new Produto();
+            produto.Cod_produto = id_produto;
+            produto.Categoria_Comida = cmbCategoria.Text;
+            produto.Descricao_Comida = txtDescricao_produto.Text;
+            produto.AdicionarComida();
+        }
+
+        private void Adiciona_Bebida()
+        {
+            Produto produto = new Produto();
+            produto.Cod_produto = id_produto;
+            produto.Quantidade_minima = nudQuantidademinima.Text;
+            produto.Tipo_bebida = cmbBebida.Text;
+            produto.AdicionarBebida();
+
+        }
+
 
     
         private void rdbComida_CheckedChanged_1(object sender, EventArgs e)
@@ -65,7 +98,7 @@ namespace HAMBURGUERIA_v1
             if (rdbBebida.Checked)
             {
                 cmbBebida.Visible = true;
-                numericUpDown1.Visible = true;
+                nudQuantidademinima.Visible = true;
                 labelQuantidade_minima.Visible = true;
                 rdbEntrada_produtos.Visible = true;
                 nudEntrada_produto.Visible = false;
@@ -82,7 +115,7 @@ namespace HAMBURGUERIA_v1
             {
 
                 cmbBebida.Visible = false;
-                numericUpDown1.Visible = false;
+                nudQuantidademinima.Visible = false;
                 labelQuantidade_minima.Visible = false;
                 rdbEntrada_produtos.Visible = false;
 
@@ -116,6 +149,18 @@ namespace HAMBURGUERIA_v1
 
 
             }
+
+        }
+        private void LimpaCampos()
+        {
+            txtNome_produto.Clear();
+            nudPreco_produto.Value = nudPreco_produto.Minimum;
+            cmbBebida.SelectedValue = 0;
+            cmbCategoria.SelectedValue = 0;
+            nudQuantidademinima.Value = nudQuantidademinima.Minimum;
+            txtDescricao_produto.Clear();
+            rdbComida.Checked = true;
+
         }
     }
 }
