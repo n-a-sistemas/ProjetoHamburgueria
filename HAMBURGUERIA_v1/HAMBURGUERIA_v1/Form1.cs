@@ -62,6 +62,7 @@ namespace HAMBURGUERIA_v1
             Produto produto = new Produto();
             produto.Cod_produto = id_produto;
             produto.Quantidade_minima = nudQuantidademinima.Text;
+            produto.Quantidade_atual = nudQuantidade_entrando.Text;
             produto.Tipo_bebida = cmbBebida.Text;
             produto.AdicionarBebida();
 
@@ -76,9 +77,10 @@ namespace HAMBURGUERIA_v1
 
             cmbCategoria.Visible = true;
                 txtDescricao_produto.Visible = true;
-                Label_Descrição.Visible = true;
-                rdbEntrada_produtos.Visible = false;
-                rdbEntrada_produtos.Checked = false;
+                Label_Descrição.Visible = true;           
+                nudQuantidademinima.Value = nudQuantidademinima.Minimum;
+                nudQuantidade_entrando.Value = nudQuantidade_entrando.Minimum;
+
 
             }
 
@@ -99,11 +101,13 @@ namespace HAMBURGUERIA_v1
             {
                 cmbBebida.Visible = true;
                 nudQuantidademinima.Visible = true;
+                nudQuantidade_entrando.Visible = true;
+                Quantidade_entrando.Visible = true;
+                nudPreco_produto.Visible = true;
                 labelQuantidade_minima.Visible = true;
-                rdbEntrada_produtos.Visible = true;
-                nudEntrada_produto.Visible = false;
-                labelQuantidade_maxima.Visible = false;
-                txtQuantidade.Visible = false;
+                txtDescricao_produto.Clear();
+              
+
 
 
 
@@ -116,8 +120,11 @@ namespace HAMBURGUERIA_v1
 
                 cmbBebida.Visible = false;
                 nudQuantidademinima.Visible = false;
+                nudQuantidade_entrando.Visible = false;
+                Quantidade_entrando.Visible = false;
+
                 labelQuantidade_minima.Visible = false;
-                rdbEntrada_produtos.Visible = false;
+         
 
 
 
@@ -128,27 +135,12 @@ namespace HAMBURGUERIA_v1
 
         private void rdbEntrada_produtos_CheckedChanged(object sender, EventArgs e)
         {
-           if (rdbEntrada_produtos.Checked)
-            {
-
-                nudEntrada_produto.Visible = true;
-                labelQuantidade_maxima.Visible = true;
-                txtQuantidade.Visible = true;
+        
 
 
-            }
-
-           else
-            {
-
-                nudEntrada_produto.Visible = false;
-                labelQuantidade_maxima.Visible = false;
-                txtQuantidade.Visible = false;
+        
 
 
-
-
-            }
 
         }
         private void LimpaCampos()

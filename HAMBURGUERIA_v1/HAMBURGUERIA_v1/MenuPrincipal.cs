@@ -23,5 +23,17 @@ namespace HAMBURGUERIA_v1
 
             addProd.ShowDialog();
         }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void atualizarEstoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Estoque addProd = new Estoque();
+
+            addProd.ShowDialog();
+        }
     }
 }

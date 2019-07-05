@@ -60,6 +60,7 @@
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.produtoToolStripMenuItem.Text = "Produto";
+            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // adicionarProdutoToolStripMenuItem
             // 
@@ -73,6 +74,7 @@
             this.atualizarEstoqueToolStripMenuItem.Name = "atualizarEstoqueToolStripMenuItem";
             this.atualizarEstoqueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atualizarEstoqueToolStripMenuItem.Text = "Atualizar estoque";
+            this.atualizarEstoqueToolStripMenuItem.Click += new System.EventHandler(this.atualizarEstoqueToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 

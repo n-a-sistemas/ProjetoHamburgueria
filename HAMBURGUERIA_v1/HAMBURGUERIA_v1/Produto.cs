@@ -20,6 +20,8 @@ namespace HAMBURGUERIA_v1
         private string categoria_comida;
         private string tipo_bebida;
         private string quantidade_minima;
+        private string quantidade_atual;
+
 
         conectaBD BD = new conectaBD();
 
@@ -71,6 +73,12 @@ namespace HAMBURGUERIA_v1
             get { return quantidade_minima; }
             set { quantidade_minima = value; }
         }
+        public string Quantidade_atual
+        {
+            get { return quantidade_atual; }
+            set { quantidade_atual = value; }
+        }
+
 
         public int Adicionar()
         {
@@ -142,9 +150,9 @@ namespace HAMBURGUERIA_v1
             try
             {
                 int exOK = 0;
-                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO BEBIDA (cod_produto,tipo_bebida, quantidade_minima) " +
-                                        " values ({0},'{1}','{2}')",
-                                                  cod_produto, tipo_bebida, quantidade_minima);
+                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO BEBIDA (cod_produto,tipo_bebida, quantidade_minima,quantidade_atual) " +
+                                        " values ({0},'{1}','{2}','{3}')",
+                                                  cod_produto, tipo_bebida, quantidade_minima,quantidade_atual);
 
 
                 exOK = BD.ExecutaComando(false);
@@ -164,6 +172,24 @@ namespace HAMBURGUERIA_v1
                 MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        public DataTable PesquisaProduto(String nome_pesquisa)
+        {
+            try
+            {
+                BD._sql = "SELECT p.cod_produto as 'Cod. Produto', p.nome_produto as 'Nome do Produto', p.valor_produto as 'Valor do Produto', b.tipo_bebida as 'Categoria', " +
+                            " b.quantidade_atual  as 'Quantidade no estoque', b.quantidade_minima as 'Quantidade minima'" +
+                        " FROM BEBIDA B " +
+                            " LEFT JOIN PRODUTO P ON B.COD_PRODUTO = P.COD_PRODUTO " +
+                        " WHERE p.nome_produto LIKE '%" + nome_pesquisa + "%'";
+
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
         }
     }
 }
