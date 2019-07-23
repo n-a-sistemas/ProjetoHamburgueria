@@ -18,6 +18,9 @@ namespace HAMBURGUERIA_v1
 
         }
 
+
+
+
         int id_produto;
         
 
@@ -153,6 +156,11 @@ namespace HAMBURGUERIA_v1
             txtDescricao_produto.Clear();
             rdbComida.Checked = true;
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

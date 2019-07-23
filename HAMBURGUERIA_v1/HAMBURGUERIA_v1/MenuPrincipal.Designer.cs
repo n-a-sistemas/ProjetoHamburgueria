@@ -110,6 +110,7 @@
             this.lançarPedidoToolStripMenuItem.Name = "lançarPedidoToolStripMenuItem";
             this.lançarPedidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lançarPedidoToolStripMenuItem.Text = "Lançar pedido";
+            this.lançarPedidoToolStripMenuItem.Click += new System.EventHandler(this.lançarPedidoToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 

@@ -45,6 +45,7 @@
             this.labelQuantidade_minima = new System.Windows.Forms.Label();
             this.Quantidade_entrando = new System.Windows.Forms.Label();
             this.nudQuantidade_entrando = new System.Windows.Forms.NumericUpDown();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco_produto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidademinima)).BeginInit();
@@ -181,7 +182,7 @@
             "1 L",
             "1,5 L",
             "2 L "});
-            this.cmbBebida.Location = new System.Drawing.Point(20, 242);
+            this.cmbBebida.Location = new System.Drawing.Point(20, 283);
             this.cmbBebida.Name = "cmbBebida";
             this.cmbBebida.Size = new System.Drawing.Size(121, 21);
             this.cmbBebida.TabIndex = 17;
@@ -223,11 +224,22 @@
             this.nudQuantidade_entrando.TabIndex = 22;
             this.nudQuantidade_entrando.Visible = false;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(384, 466);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 501);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.nudQuantidade_entrando);
             this.Controls.Add(this.Quantidade_entrando);
             this.Controls.Add(this.labelQuantidade_minima);
@@ -273,6 +285,7 @@
         private System.Windows.Forms.Label labelQuantidade_minima;
         private System.Windows.Forms.Label Quantidade_entrando;
         private System.Windows.Forms.NumericUpDown nudQuantidade_entrando;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
 

@@ -35,5 +35,12 @@ namespace HAMBURGUERIA_v1
 
             addProd.ShowDialog();
         }
+
+        private void lançarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pedido addProd = new Pedido();
+
+            addProd.ShowDialog();
+        }
     }
 }

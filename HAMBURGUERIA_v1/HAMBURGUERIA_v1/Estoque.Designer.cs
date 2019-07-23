@@ -33,6 +33,8 @@
             this.dgvTodosProdutos = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTodosProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,37 +57,64 @@
             // 
             // dgvTodosProdutos
             // 
+            this.dgvTodosProdutos.AllowUserToAddRows = false;
+            this.dgvTodosProdutos.AllowUserToDeleteRows = false;
             this.dgvTodosProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTodosProdutos.Location = new System.Drawing.Point(12, 54);
             this.dgvTodosProdutos.Name = "dgvTodosProdutos";
+            this.dgvTodosProdutos.ReadOnly = true;
+            this.dgvTodosProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTodosProdutos.Size = new System.Drawing.Size(776, 341);
             this.dgvTodosProdutos.TabIndex = 2;
             this.dgvTodosProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTodosProdutos_CellContentClick);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(632, 415);
+            this.btnAlterar.Location = new System.Drawing.Point(544, 406);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(75, 37);
             this.btnAlterar.TabIndex = 3;
-            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(713, 415);
+            this.btnCancelar.Location = new System.Drawing.Point(717, 406);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 37);
             this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Location = new System.Drawing.Point(634, 406);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(75, 37);
+            this.btnDeletar.TabIndex = 5;
+            this.btnDeletar.Text = "DELETAR";
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Location = new System.Drawing.Point(452, 406);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(75, 37);
+            this.btnAdicionar.TabIndex = 6;
+            this.btnAdicionar.Text = "ADICIONAR";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // Estoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.dgvTodosProdutos);
@@ -106,5 +135,7 @@
         private System.Windows.Forms.DataGridView dgvTodosProdutos;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Button btnAdicionar;
     }
 }

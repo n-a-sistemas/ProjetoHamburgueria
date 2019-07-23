@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace HAMBURGUERIA_v1
 {
-    class Produto
+    public class Produto
     {
         private int cod_produto;
         private string nome_produto;
@@ -80,6 +80,8 @@ namespace HAMBURGUERIA_v1
         }
 
 
+
+
         public int Adicionar()
         {
             int id = 0;
@@ -116,7 +118,7 @@ namespace HAMBURGUERIA_v1
 
         public void AdicionarComida()
         {
-          
+
             try
             {
                 int exOK = 0;
@@ -152,7 +154,7 @@ namespace HAMBURGUERIA_v1
                 int exOK = 0;
                 BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO BEBIDA (cod_produto,tipo_bebida, quantidade_minima,quantidade_atual) " +
                                         " values ({0},'{1}','{2}','{3}')",
-                                                  cod_produto, tipo_bebida, quantidade_minima,quantidade_atual);
+                                                  cod_produto, tipo_bebida, quantidade_minima, quantidade_atual);
 
 
                 exOK = BD.ExecutaComando(false);
@@ -191,5 +193,128 @@ namespace HAMBURGUERIA_v1
 
             return null;
         }
+
+
+        public void AtualizaProduto()
+        {
+            try
+            {
+                int exOK = 0;
+
+                BD._sql = String.Format(new CultureInfo("en-US"), "UPDATE PRODUTO SET nome_produto = '{0}', valor_produto = '{1}'" +
+                    " WHERE cod_produto = {2}", nome_produto, valor_produto, cod_produto);
+
+                exOK = BD.ExecutaComando(false);
+
+                if (exOK < 0)
+                {
+                    MessageBox.Show("Erro ao atualizar Produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Produto atualizado com sucesso!", "Atualizado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+
+        }
+        public void AtualizaBebida()
+        {
+            try
+            {
+                int exOK = 0;
+
+                BD._sql = String.Format(new CultureInfo("en-US"), "UPDATE BEBIDA SET tipo_bebida = '{0}', quantidade_atual = '{1}',quantidade_minima = '{2}'" +
+                    " WHERE cod_produto = {3}", tipo_bebida, quantidade_atual, quantidade_minima, cod_produto);
+
+                exOK = BD.ExecutaComando(false);
+
+                if (exOK < 0)
+                {
+                    MessageBox.Show("Erro ao atualizar Produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Bebida atualizado com sucesso!", "Atualizado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+
+        }
+        public void DeletarBebida()
+        {
+            try
+            {
+                int exOK = 0;
+                BD._sql = String.Format("DELETE FROM BEBIDA WHERE cod_produto = {0}", cod_produto);
+
+                exOK = BD.ExecutaComando(false);
+
+                if (exOK < 0)
+                {
+                    MessageBox.Show("Erro ao deletar Bebida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Bebida deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return;
+
+
+        }
+
+        public void DeletarProduto()
+        {
+            try
+            {
+                int exOK = 0;
+                BD._sql = String.Format("DELETE FROM Produto WHERE cod_produto = {0}", cod_produto);
+
+                exOK = BD.ExecutaComando(false);
+
+                if (exOK < 0)
+                {
+                    MessageBox.Show("Erro ao deletar Produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Produto deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return;
+
+
+        }
+
+
+
     }
+
 }
