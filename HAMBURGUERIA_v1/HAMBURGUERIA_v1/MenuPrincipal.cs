@@ -42,5 +42,11 @@ namespace HAMBURGUERIA_v1
 
             addProd.ShowDialog();
         }
+
+        private void caixaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Caixa addProd = new Caixa();
+            addProd.ShowDialog();
+        }
     }
 }

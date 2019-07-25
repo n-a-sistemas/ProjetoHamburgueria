@@ -32,11 +32,10 @@
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarEstoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDeFuncionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscaPorFuncionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lançarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,8 +43,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produtoToolStripMenuItem,
-            this.funcionáriosToolStripMenuItem,
-            this.pedidoToolStripMenuItem});
+            this.pedidoToolStripMenuItem,
+            this.caixaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -76,26 +75,12 @@
             this.atualizarEstoqueToolStripMenuItem.Text = "Atualizar estoque";
             this.atualizarEstoqueToolStripMenuItem.Click += new System.EventHandler(this.atualizarEstoqueToolStripMenuItem_Click);
             // 
-            // funcionáriosToolStripMenuItem
+            // lançarPedidoToolStripMenuItem
             // 
-            this.funcionáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroDeFuncionáriosToolStripMenuItem,
-            this.buscaPorFuncionáriosToolStripMenuItem});
-            this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.funcionáriosToolStripMenuItem.Text = "Funcionários";
-            // 
-            // cadastroDeFuncionáriosToolStripMenuItem
-            // 
-            this.cadastroDeFuncionáriosToolStripMenuItem.Name = "cadastroDeFuncionáriosToolStripMenuItem";
-            this.cadastroDeFuncionáriosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.cadastroDeFuncionáriosToolStripMenuItem.Text = "Cadastro de funcionários";
-            // 
-            // buscaPorFuncionáriosToolStripMenuItem
-            // 
-            this.buscaPorFuncionáriosToolStripMenuItem.Name = "buscaPorFuncionáriosToolStripMenuItem";
-            this.buscaPorFuncionáriosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.buscaPorFuncionáriosToolStripMenuItem.Text = "Busca por funcionários";
+            this.lançarPedidoToolStripMenuItem.Name = "lançarPedidoToolStripMenuItem";
+            this.lançarPedidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lançarPedidoToolStripMenuItem.Text = "Lançar pedido";
+            this.lançarPedidoToolStripMenuItem.Click += new System.EventHandler(this.lançarPedidoToolStripMenuItem_Click);
             // 
             // pedidoToolStripMenuItem
             // 
@@ -105,12 +90,20 @@
             this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.pedidoToolStripMenuItem.Text = "Pedido";
             // 
-            // lançarPedidoToolStripMenuItem
+            // caixaToolStripMenuItem
             // 
-            this.lançarPedidoToolStripMenuItem.Name = "lançarPedidoToolStripMenuItem";
-            this.lançarPedidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lançarPedidoToolStripMenuItem.Text = "Lançar pedido";
-            this.lançarPedidoToolStripMenuItem.Click += new System.EventHandler(this.lançarPedidoToolStripMenuItem_Click);
+            this.caixaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.caixaToolStripMenuItem1});
+            this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
+            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.caixaToolStripMenuItem.Text = "Caixa";
+            // 
+            // caixaToolStripMenuItem1
+            // 
+            this.caixaToolStripMenuItem1.Name = "caixaToolStripMenuItem1";
+            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.caixaToolStripMenuItem1.Text = "Caixa...";
+            this.caixaToolStripMenuItem1.Click += new System.EventHandler(this.caixaToolStripMenuItem1_Click);
             // 
             // MenuPrincipal
             // 
@@ -134,10 +127,9 @@
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adicionarProdutoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atualizarEstoqueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem funcionáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroDeFuncionáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscaPorFuncionáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lançarPedidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem1;
     }
 }
