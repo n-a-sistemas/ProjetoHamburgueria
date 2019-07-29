@@ -162,6 +162,76 @@ namespace HAMBURGUERIA_v1
         {
             this.Close();
         }
+
+        private void txtNome_produto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudPreco_produto_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbBebida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudQuantidade_entrando_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Quantidade_entrando_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudQuantidademinima_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelQuantidade_minima_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescricao_produto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label_Descrição_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

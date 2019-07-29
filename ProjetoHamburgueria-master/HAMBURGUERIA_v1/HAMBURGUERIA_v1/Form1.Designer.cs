@@ -54,32 +54,45 @@
             // 
             // label2
             // 
+            this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome do Produto:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Location = new System.Drawing.Point(12, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Preço";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNome_produto
             // 
+            this.txtNome_produto.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.txtNome_produto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome_produto.Location = new System.Drawing.Point(159, 35);
             this.txtNome_produto.Name = "txtNome_produto";
-            this.txtNome_produto.Size = new System.Drawing.Size(351, 20);
+            this.txtNome_produto.Size = new System.Drawing.Size(639, 20);
             this.txtNome_produto.TabIndex = 8;
+            this.txtNome_produto.TextChanged += new System.EventHandler(this.txtNome_produto_TextChanged);
             // 
             // btnSalvar_produto
             // 
-            this.btnSalvar_produto.Location = new System.Drawing.Point(303, 466);
+            this.btnSalvar_produto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar_produto.Location = new System.Drawing.Point(736, 614);
             this.btnSalvar_produto.Name = "btnSalvar_produto";
             this.btnSalvar_produto.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar_produto.TabIndex = 10;
@@ -89,7 +102,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(222, 466);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(655, 614);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
@@ -98,37 +112,51 @@
             // 
             // Label_Descrição
             // 
+            this.Label_Descrição.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.Label_Descrição.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Label_Descrição.AutoSize = true;
-            this.Label_Descrição.Location = new System.Drawing.Point(26, 412);
+            this.Label_Descrição.Location = new System.Drawing.Point(23, 568);
             this.Label_Descrição.Name = "Label_Descrição";
             this.Label_Descrição.Size = new System.Drawing.Size(55, 13);
             this.Label_Descrição.TabIndex = 12;
             this.Label_Descrição.Text = "Descrição";
-            this.Label_Descrição.Visible = false;
+            this.Label_Descrição.Click += new System.EventHandler(this.Label_Descrição_Click);
             // 
             // txtDescricao_produto
             // 
-            this.txtDescricao_produto.Location = new System.Drawing.Point(108, 407);
+            this.txtDescricao_produto.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.txtDescricao_produto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescricao_produto.Location = new System.Drawing.Point(105, 563);
             this.txtDescricao_produto.Multiline = true;
             this.txtDescricao_produto.Name = "txtDescricao_produto";
-            this.txtDescricao_produto.Size = new System.Drawing.Size(499, 24);
+            this.txtDescricao_produto.Size = new System.Drawing.Size(787, 24);
             this.txtDescricao_produto.TabIndex = 13;
+            this.txtDescricao_produto.TextChanged += new System.EventHandler(this.txtDescricao_produto_TextChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.rdbBebida);
             this.groupBox1.Controls.Add(this.rdbComida);
-            this.groupBox1.Location = new System.Drawing.Point(15, 87);
+            this.groupBox1.Location = new System.Drawing.Point(12, 270);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(880, 100);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rdbBebida
             // 
+            this.rdbBebida.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.rdbBebida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbBebida.AutoSize = true;
-            this.rdbBebida.Location = new System.Drawing.Point(109, 44);
+            this.rdbBebida.Location = new System.Drawing.Point(116, 44);
             this.rdbBebida.Name = "rdbBebida";
             this.rdbBebida.Size = new System.Drawing.Size(58, 17);
             this.rdbBebida.TabIndex = 1;
@@ -138,6 +166,9 @@
             // 
             // rdbComida
             // 
+            this.rdbComida.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.rdbComida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbComida.AutoSize = true;
             this.rdbComida.Checked = true;
             this.rdbComida.Location = new System.Drawing.Point(5, 44);
@@ -151,11 +182,13 @@
             // 
             // nudPreco_produto
             // 
+            this.nudPreco_produto.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.nudPreco_produto.DecimalPlaces = 2;
-            this.nudPreco_produto.Location = new System.Drawing.Point(159, 61);
+            this.nudPreco_produto.Location = new System.Drawing.Point(159, 117);
             this.nudPreco_produto.Name = "nudPreco_produto";
             this.nudPreco_produto.Size = new System.Drawing.Size(120, 20);
             this.nudPreco_produto.TabIndex = 15;
+            this.nudPreco_produto.ValueChanged += new System.EventHandler(this.nudPreco_produto_ValueChanged);
             // 
             // cmbCategoria
             // 
@@ -165,13 +198,15 @@
             "LANCHE",
             "SOBREMESA",
             "PORÇÃO"});
-            this.cmbCategoria.Location = new System.Drawing.Point(20, 242);
+            this.cmbCategoria.Location = new System.Drawing.Point(42, 458);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(121, 21);
             this.cmbCategoria.TabIndex = 16;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // cmbBebida
             // 
+            this.cmbBebida.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.cmbBebida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBebida.FormattingEnabled = true;
             this.cmbBebida.Items.AddRange(new object[] {
@@ -182,51 +217,61 @@
             "1 L",
             "1,5 L",
             "2 L "});
-            this.cmbBebida.Location = new System.Drawing.Point(20, 283);
+            this.cmbBebida.Location = new System.Drawing.Point(41, 459);
             this.cmbBebida.Name = "cmbBebida";
             this.cmbBebida.Size = new System.Drawing.Size(121, 21);
             this.cmbBebida.TabIndex = 17;
             this.cmbBebida.Visible = false;
+            this.cmbBebida.SelectedIndexChanged += new System.EventHandler(this.cmbBebida_SelectedIndexChanged);
             // 
             // nudQuantidademinima
             // 
-            this.nudQuantidademinima.Location = new System.Drawing.Point(524, 242);
+            this.nudQuantidademinima.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.nudQuantidademinima.Location = new System.Drawing.Point(650, 465);
             this.nudQuantidademinima.Name = "nudQuantidademinima";
             this.nudQuantidademinima.Size = new System.Drawing.Size(80, 20);
             this.nudQuantidademinima.TabIndex = 18;
             this.nudQuantidademinima.Visible = false;
+            this.nudQuantidademinima.ValueChanged += new System.EventHandler(this.nudQuantidademinima_ValueChanged);
             // 
             // labelQuantidade_minima
             // 
+            this.labelQuantidade_minima.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.labelQuantidade_minima.AutoSize = true;
-            this.labelQuantidade_minima.Location = new System.Drawing.Point(402, 247);
+            this.labelQuantidade_minima.Location = new System.Drawing.Point(506, 467);
             this.labelQuantidade_minima.Name = "labelQuantidade_minima";
             this.labelQuantidade_minima.Size = new System.Drawing.Size(100, 13);
             this.labelQuantidade_minima.TabIndex = 20;
             this.labelQuantidade_minima.Text = "Quantidade minima:";
             this.labelQuantidade_minima.Visible = false;
+            this.labelQuantidade_minima.Click += new System.EventHandler(this.labelQuantidade_minima_Click);
             // 
             // Quantidade_entrando
             // 
+            this.Quantidade_entrando.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.Quantidade_entrando.AutoSize = true;
-            this.Quantidade_entrando.Location = new System.Drawing.Point(171, 246);
+            this.Quantidade_entrando.Location = new System.Drawing.Point(232, 463);
             this.Quantidade_entrando.Name = "Quantidade_entrando";
             this.Quantidade_entrando.Size = new System.Drawing.Size(111, 13);
             this.Quantidade_entrando.TabIndex = 21;
             this.Quantidade_entrando.Text = "Quantidade Entrando:";
             this.Quantidade_entrando.Visible = false;
+            this.Quantidade_entrando.Click += new System.EventHandler(this.Quantidade_entrando_Click);
             // 
             // nudQuantidade_entrando
             // 
-            this.nudQuantidade_entrando.Location = new System.Drawing.Point(298, 242);
+            this.nudQuantidade_entrando.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.nudQuantidade_entrando.Location = new System.Drawing.Point(393, 463);
             this.nudQuantidade_entrando.Name = "nudQuantidade_entrando";
             this.nudQuantidade_entrando.Size = new System.Drawing.Size(80, 20);
             this.nudQuantidade_entrando.TabIndex = 22;
             this.nudQuantidade_entrando.Visible = false;
+            this.nudQuantidade_entrando.ValueChanged += new System.EventHandler(this.nudQuantidade_entrando_ValueChanged);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(384, 466);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(817, 614);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 23;
@@ -238,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 501);
+            this.ClientSize = new System.Drawing.Size(904, 649);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.nudQuantidade_entrando);
             this.Controls.Add(this.Quantidade_entrando);
@@ -257,6 +302,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form1";
             this.Text = "CADASTRO DE PRODUTOS";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco_produto)).EndInit();

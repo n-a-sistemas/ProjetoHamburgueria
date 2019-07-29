@@ -194,6 +194,25 @@ namespace HAMBURGUERIA_v1
             return null;
         }
 
+        public DataTable PesquisaProdutoCaixa(String nome_caixa)
+        {
+            try
+            {
+                BD._sql = "SELECT p.cod_produto as 'Cod. Produto', p.nome_produto as 'Nome do Produto', p.valor_produto as 'Valor do Produto'" +
+                           " FROM PRODUTO P" +
+                            " LEFT JOIN BEBIDA B ON P.COD_PRODUTO = B.COD_PRODUTO " +
+                            " LEFT JOIN COMIDA C ON P.COD_PRODUTO = C.COD_PRODUTO " +
+                        " WHERE p.nome_produto LIKE '%" + nome_caixa + "%'";
+
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
+        }
+
 
         public void AtualizaProduto()
         {

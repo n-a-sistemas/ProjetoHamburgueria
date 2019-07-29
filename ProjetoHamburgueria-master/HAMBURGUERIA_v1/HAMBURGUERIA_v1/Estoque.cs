@@ -82,13 +82,7 @@ namespace HAMBURGUERIA_v1
 
                 txtBuscaProduto_TextChanged(sender, e);
             }
-
-
-
-
-
-
-
+                                                         
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

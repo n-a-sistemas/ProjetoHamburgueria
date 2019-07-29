@@ -15,13 +15,15 @@ namespace HAMBURGUERIA_v1
         public MenuPrincipal()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+
         }
 
         private void adicionarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 addProd = new Form1();
-
             addProd.ShowDialog();
+
         }
 
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,12 +36,20 @@ namespace HAMBURGUERIA_v1
             Estoque addProd = new Estoque();
 
             addProd.ShowDialog();
+            WindowState = FormWindowState.Maximized;
         }
 
         private void lançarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pedido addProd = new Pedido();
+            LancarPedido addProd = new LancarPedido();
+            //addProd.WindowState = FormWindowState.Maximized;
 
+            addProd.ShowDialog();
+        }
+
+        private void caixaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Caixa addProd = new Caixa();
             addProd.ShowDialog();
         }
     }
