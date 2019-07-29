@@ -39,15 +39,15 @@ namespace HAMBURGUERIA_v1
             produtoCaixa.Valor_produto = Convert.ToInt32(linha[0].Cells[2].Value);
 
             
-            DataGridViewRow row = (DataGridViewRow)dgvCaixaLista.Rows[0].Clone();
-            row.Cells[0].Value = Cod_produto.Value;
-            row.Cells[1].Value = Nome_produto.Text;
-            row.Cells[2].Value = Valor_produto.Value;
+            //DataGridViewRow row = (DataGridViewRow)dgvCaixaLista.Rows[0].Clone();
+           // row.Cells[0].Value = produtoCaixa.Cod_produto.Value;
+           // row.Cells[1].Value = produtoCaixa.Nome_produto.Text;
+           // row.Cells[2].Value = produtoCaixa.Valor_produto.Value;
 
-            dgvCompra.Rows.Add(row);
-            Cod_produto.SelectedValue = 0;
-            Nome_produto.Text = "";
-            Valor_produto.SelectedValue = 0;
+            //dgvCompra.Rows.Add(row);
+            //produtoCaixa.Cod_produto.SelectedValue = 0;
+            //produtoCaixa.Nome_produto.Text = "";
+            //produtoCaixa.Valor_produto.SelectedValue = 0;
         }
     }
 }

@@ -38,7 +38,8 @@ namespace HAMBURGUERIA_v1
 
         private void lançarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pedido addProd = new Pedido();
+            LancarPedido addProd = new LancarPedido();
+            //addProd.WindowState = FormWindowState.Maximized;
 
             addProd.ShowDialog();
         }
