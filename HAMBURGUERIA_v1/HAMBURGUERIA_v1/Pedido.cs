@@ -97,31 +97,24 @@ namespace HAMBURGUERIA_v1
             return exOK;
         }
 
-
-        public void DeletarPedido()
+        public DataTable PesquisaProduto(String nome_pedido)
         {
             try
             {
-                int exOK = 0;
-                BD._sql = String.Format("DELETE FROM Pedido WHERE num_pedido = {0}", num_pedido);
+                BD._sql = "SELECT p.cod_produto as 'Cod. Produto', p.nome_produto as 'Nome do Produto', p.valor_produto as 'Valor do Produto'" +
+                           " FROM PRODUTO P" +
+                            " LEFT JOIN BEBIDA B ON P.COD_PRODUTO = B.COD_PRODUTO " +
+                            " LEFT JOIN COMIDA C ON P.COD_PRODUTO = C.COD_PRODUTO " +
+                        " WHERE p.nome_produto LIKE '%" + nome_pedido + "%'";
 
-                exOK = BD.ExecutaComando(false);
-
-                if (exOK < 0)
-                {
-                    MessageBox.Show("Erro ao deletar Pedido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Pedido deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                return BD.ExecutaSelect();
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return;
+
+            return null;
         }
+
     }
 }

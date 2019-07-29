@@ -17,49 +17,36 @@ namespace HAMBURGUERIA_v1
             InitializeComponent();
         }
 
-        private void txtQuantidade_Produto_TextChanged(object sender, EventArgs e)
+ 
+        private void txtQuantidade_Produto_TextChanged_1(object sender, EventArgs e)
         {
-            Produto pesquisa_produto = new Produto();
-            dgvProduto.DataSource = pesquisa_produto.PesquisaProduto(txtQuantidade_Produto.Text);
+            Pedido PesquisaProduto = new Pedido();
+            dgvProduto.DataSource = PesquisaProduto.PesquisaProduto(txtQuantidade_Produto.Text);
             dgvProduto.AutoResizeColumns();
         }
 
-        private void Adicionar_Click(object sender, EventArgs e)
+        private void btnAdicionar_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linha = dgvProduto.SelectedRows;
 
-            dgvPedido.ColumnCount = 3;
-
-            for (int i = 0; i < dgvProduto.Rows.Count; i++)
-            {
-                dgvPedido.Rows.Add(dgvProduto.Rows[i].Cells[0].Value,
-                dgvProduto.Rows[i].Cells[1].Value,
-                dgvProduto.Rows[i].Cells[2].Value);
-            }
+            dgvPedido.Rows.Add(linha[0].Cells[1].Value.ToString(), linha[0].Cells[2].Value.ToString(), 1);
+        
         }
 
-        private void Remover_Click(object sender, EventArgs e)
+        private void bntRemover_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection linha_selecionada = dgvPedido.SelectedRows;
-            dgvPedido.Rows.Remove(dgvPedido.Rows[0]);
+            dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index);
         }
 
-        private void Cancelar_Click(object sender, EventArgs e)
+        private void btbCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void Enviar_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Pedido pedido = new Pedido();
-            pedido.Num_comanda = txtComanda.Text;
-            pedido.Quant_produto = dgvPedido.Text;
-            pedido.Observacoes = txtObservacoes.Text;
-        }
-
-        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            Pedido EnviarPedido = new Pedido();
+            EnviarPedido.AdicionarPedido();
         }
     }
 }

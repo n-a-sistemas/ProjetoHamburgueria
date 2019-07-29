@@ -41,6 +41,9 @@
             this.btbCancelar = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.bntRemover = new System.Windows.Forms.Button();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
@@ -94,20 +97,32 @@
             this.txtQuantidade_Produto.Name = "txtQuantidade_Produto";
             this.txtQuantidade_Produto.Size = new System.Drawing.Size(100, 20);
             this.txtQuantidade_Produto.TabIndex = 5;
+            this.txtQuantidade_Produto.TextChanged += new System.EventHandler(this.txtQuantidade_Produto_TextChanged_1);
             // 
             // dgvPedido
             // 
+            this.dgvPedido.AllowUserToAddRows = false;
+            this.dgvPedido.AllowUserToDeleteRows = false;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeProduto,
+            this.Valor,
+            this.Quantidade});
             this.dgvPedido.Location = new System.Drawing.Point(354, 65);
             this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.ReadOnly = true;
             this.dgvPedido.Size = new System.Drawing.Size(240, 150);
             this.dgvPedido.TabIndex = 6;
             // 
             // dgvProduto
             // 
+            this.dgvProduto.AllowUserToAddRows = false;
+            this.dgvProduto.AllowUserToDeleteRows = false;
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduto.Location = new System.Drawing.Point(15, 65);
             this.dgvProduto.Name = "dgvProduto";
+            this.dgvProduto.ReadOnly = true;
+            this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduto.Size = new System.Drawing.Size(240, 150);
             this.dgvProduto.TabIndex = 7;
             // 
@@ -127,6 +142,7 @@
             this.btnAdicionar.TabIndex = 9;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btbCancelar
             // 
@@ -136,6 +152,7 @@
             this.btbCancelar.TabIndex = 10;
             this.btbCancelar.Text = "Cancelar";
             this.btbCancelar.UseVisualStyleBackColor = true;
+            this.btbCancelar.Click += new System.EventHandler(this.btbCancelar_Click);
             // 
             // btnEnviar
             // 
@@ -145,6 +162,7 @@
             this.btnEnviar.TabIndex = 11;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // bntRemover
             // 
@@ -154,6 +172,25 @@
             this.bntRemover.TabIndex = 12;
             this.bntRemover.Text = "Remover";
             this.bntRemover.UseVisualStyleBackColor = true;
+            this.bntRemover.Click += new System.EventHandler(this.bntRemover_Click);
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.HeaderText = "Nome do Produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
             // 
             // LancarPedido
             // 
@@ -197,5 +234,8 @@
         private System.Windows.Forms.Button btbCancelar;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Button bntRemover;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
     }
 }
