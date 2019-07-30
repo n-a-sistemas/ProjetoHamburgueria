@@ -15,6 +15,8 @@ namespace HAMBURGUERIA_v1
         public MenuPrincipal()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+
         }
 
         private void adicionarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
