@@ -29,7 +29,7 @@ namespace HAMBURGUERIA_v1
         {
             DataGridViewSelectedRowCollection linha = dgvProduto.SelectedRows;
 
-            dgvPedido.Rows.Add(linha[0].Cells[1].Value.ToString(), linha[0].Cells[2].Value.ToString(), 1);
+            dgvPedido.Rows.Add(linha[0].Cells[1].Value.ToString(), linha[0].Cells[2].Value.ToString(),1);
         
         }
 
@@ -47,6 +47,31 @@ namespace HAMBURGUERIA_v1
         {
             Pedido EnviarPedido = new Pedido();
             EnviarPedido.AdicionarPedido();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtObservacoes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

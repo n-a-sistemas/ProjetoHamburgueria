@@ -38,7 +38,7 @@ namespace HAMBURGUERIA_v1
 
         {
             StreamReader str = new StreamReader("conexao.ini");
-            _strConexao = str.ReadLine() + "Initial Catalog=Hamburgueria;Persist Security Info=True;User ID=sa;Password=senac";
+            _strConexao = str.ReadLine() + "Initial Catalog=Hamb;Persist Security Info=True;User ID=sa;Password=senac";
             _conn = new SqlConnection(_strConexao);
             _comandoSQL = new SqlCommand();
             _comandoSQL.Connection = _conn;
