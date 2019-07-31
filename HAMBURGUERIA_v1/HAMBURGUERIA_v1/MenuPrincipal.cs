@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace HAMBURGUERIA_v1
 {
     public partial class MenuPrincipal : Form
     {
+        conectaBD BD = new conectaBD();
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -24,11 +27,6 @@ namespace HAMBURGUERIA_v1
             Form1 addProd = new Form1();
 
             addProd.ShowDialog();
-        }
-
-        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void atualizarEstoqueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,5 +49,20 @@ namespace HAMBURGUERIA_v1
             Caixa addProd = new Caixa();
             addProd.ShowDialog();
         }
+
+        private void cadastrarComandaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void atualizaTabela()
+        {
+
+        }
+
     }
+
+    
+
+
 }

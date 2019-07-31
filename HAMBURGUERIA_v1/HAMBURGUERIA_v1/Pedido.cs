@@ -13,37 +13,16 @@ namespace HAMBURGUERIA_v1
     public class Pedido : Produto
     {
         private int num_pedido;
-        private int num_comanda;
+        private string num_comanda;
         private decimal valor_pedido;
         private string observacoes;
         private string quant_produto;
         private string num_mesa;
         private string cod_cliente;
-        private string valor_por_item;
-        private int quantidade_itens;
-        private int num_item;
+
 
 
         conectaBD BD = new conectaBD();
-
-
-
-
-        public int Num_item
-        {
-            get { return num_item; }
-            set { num_item = value; }
-        }
-
-
-        public int Quantidade_itens
-        {
-            get { return quantidade_itens; }
-            set { quantidade_itens = value; }
-        }
-
-
-
 
         public int Num_pedido
         {
@@ -51,15 +30,7 @@ namespace HAMBURGUERIA_v1
             set { num_pedido = value; }
         }
 
-        public string Valor_por_item
-        {
-            get { return valor_por_item; }
-        
-            set { valor_por_item = value; }
-        }
-
-
-        public int Num_comanda
+        public string Num_comanda
         {
             get { return num_comanda; }
             set { num_comanda = value; }
@@ -96,24 +67,23 @@ namespace HAMBURGUERIA_v1
         }
 
 
-        public int AdicionarPedido()
+        public void AdicionarPedido()
         {
-            int id = 0;
+            int exOK = 0;
             try
             {
-                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO PEDIDO (valor_pedido, observacoes,quant_produto) " +
-                                        " values ('{0}','{1}','{2}')",
-                                                  valor_pedido, observacoes,quant_produto) +
-                                                  "; SELECT SCOPE_IDENTITY();";
+                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO PEDIDO (num_comanda,valor_pedido, observacoes,quant_produto) " +
+                                        " values ('{0}','{1}','{2}','{3}')",
+                                                num_comanda,valor_pedido, observacoes,quant_produto);
 
-                BD.ExecutaComando(false, out id);
+                exOK = BD.ExecutaComando(false);
 
-                if (id > 0)
+                if (exOK > 0)
                 {
                     MessageBox.Show("Pedido feito com sucesso!", "Cadastro com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                {
+                { 
                     MessageBox.Show("Erro ao cadastrar Produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -122,56 +92,7 @@ namespace HAMBURGUERIA_v1
             {
                 MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            return id;
-
-
-
-
         }
-
-
-        public int AdicionarItemPedido()
-        {
-            int id = 0;
-            try
-            {
-                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO ITEM_PEDIDO (cod_produto,valor_por_item,quantidade_itens) " +
-                                        " values  ('{0}','{1}''{3}')",
-                                                   Cod_produto, valor_por_item,quantidade_itens) +
-                                                  ";SELECT SCOPE_IDENTITY();";
-
-                BD.ExecutaComando(false, out id);
-
-                if (id > 0)
-                {
-                    MessageBox.Show("Pedido foi cadastrado com sucesso!", "Cadastro com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao cadastrar Pedido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return id;
-
-
-
-
-        }
-
-
-
-
-
-
-
-
 
         public DataTable PesquisaProduto(String nome_pedido)
         {
@@ -191,6 +112,6 @@ namespace HAMBURGUERIA_v1
 
             return null;
         }
-
+       
     }
 }

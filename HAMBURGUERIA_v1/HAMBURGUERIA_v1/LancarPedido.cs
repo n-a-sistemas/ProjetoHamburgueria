@@ -17,7 +17,6 @@ namespace HAMBURGUERIA_v1
             InitializeComponent();
         }
 
-        int comanda_pedido;
         int num_item;
 
 
@@ -34,7 +33,7 @@ namespace HAMBURGUERIA_v1
         {
             DataGridViewSelectedRowCollection linha = dgvProduto.SelectedRows;
 
-            dgvPedido.Rows.Add(linha[0].Cells[1].Value.ToString(), linha[0].Cells[2].Value.ToString(),nudQuantidade.Value);
+            dgvPedido.Rows.Add(linha[0].Cells[0].Value.ToString(), linha[0].Cells[1].Value.ToString(), linha[0].Cells[2].Value.ToString(),nudQuantidade.Value);
 
 
             txtTotal.Text = Convert.ToString(Convert.ToDecimal(txtTotal.Text) + Convert.ToDecimal(linha[0].Cells[2].Value) * nudQuantidade.Value);
@@ -66,31 +65,34 @@ namespace HAMBURGUERIA_v1
             EnviarPedido.Observacoes = txtObservacoes.Text;
             EnviarPedido.Valor_pedido = Convert.ToDecimal(txtTotal.Text);
             EnviarPedido.Quant_produto = Convert.ToString(txtQuantidade.Text);
+            EnviarPedido.Num_comanda =   txtComanda.Text;
 
-            ///Adicionar Item pedido
-            EnviarPedido.Num_item = num_item;
-            EnviarPedido.Cod_produto = Convert.ToInt32(linha[0].Cells[0].Value.ToString());
-            EnviarPedido.Valor_por_item = linha[0].Cells[2].Value.ToString();
-            EnviarPedido.Quantidade_itens = Convert.ToInt32(nudQuantidade.Value);
+          EnviarPedido.AdicionarPedido();///
+           //num_item = EnviarPedido.AdicionarItemPedido();
 
-
-            EnviarPedido.Num_comanda = comanda_pedido;
-
-
-           comanda_pedido = EnviarPedido.AdicionarPedido();///
-           num_item = EnviarPedido.AdicionarItemPedido();
-
-            
+            SalvaItemPedido();
 
             this.Close();
-            
+         
+        }
+        private void SalvaItemPedido()
+        {
+            foreach (DataGridViewRow dataGridViewRow in dgvPedido.Rows)
+            {
+                Item_pedido item = new Item_pedido();
+                
+                if (dataGridViewRow.Cells[0].Value != null)
+                {
+                    item.Cod_produto = Convert.ToInt32(dataGridViewRow.Cells[0].Value);
+                    item.Valor_por_item = Convert.ToDecimal(dataGridViewRow.Cells[2].Value);
+                    item.Quantidade_itens = Convert.ToInt32(dataGridViewRow.Cells[3].Value);
+                    item.Num_comanda = txtComanda.Text;
+
+                    item.AdicionarItem();
+                }
+            }
 
         }
-     
-
-
-
-
     }
                 
                

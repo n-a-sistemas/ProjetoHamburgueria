@@ -53,6 +53,7 @@
     <Compile Include="Caixa.Designer.cs">
       <DependentUpon>Caixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comanda.cs" />
     <Compile Include="conectaBD.cs" />
     <Compile Include="EditarProduto.cs">
       <SubType>Form</SubType>
@@ -72,6 +73,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item_pedido.cs" />
     <Compile Include="LancarPedido.cs">
       <SubType>Form</SubType>
     </Compile>

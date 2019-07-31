@@ -33,9 +33,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtQuantidade_Produto = new System.Windows.Forms.TextBox();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.txtObservacoes = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -46,6 +43,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtComanda = new System.Windows.Forms.TextBox();
+            this.cod_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
@@ -56,18 +59,18 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(3, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Produto:";
+            this.label2.Text = "PRODUTO:";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(546, 103);
+            this.label3.Location = new System.Drawing.Point(545, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 2;
@@ -102,6 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cod_produto,
             this.NomeProduto,
             this.Valor,
             this.Quantidade});
@@ -110,24 +114,6 @@
             this.dgvPedido.ReadOnly = true;
             this.dgvPedido.Size = new System.Drawing.Size(347, 150);
             this.dgvPedido.TabIndex = 6;
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.HeaderText = "Nome do Produto";
-            this.NomeProduto.Name = "NomeProduto";
-            this.NomeProduto.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
             // 
             // dgvProduto
             // 
@@ -241,11 +227,53 @@
             this.txtQuantidade.Text = "0";
             this.txtQuantidade.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "COMANDA:";
+            // 
+            // txtComanda
+            // 
+            this.txtComanda.Location = new System.Drawing.Point(73, 13);
+            this.txtComanda.Name = "txtComanda";
+            this.txtComanda.Size = new System.Drawing.Size(243, 20);
+            this.txtComanda.TabIndex = 18;
+            // 
+            // cod_produto
+            // 
+            this.cod_produto.HeaderText = "Código do produto";
+            this.cod_produto.Name = "cod_produto";
+            this.cod_produto.ReadOnly = true;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.HeaderText = "Nome do Produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            // 
             // LancarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 406);
+            this.Controls.Add(this.txtComanda);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label5);
@@ -283,12 +311,15 @@
         private System.Windows.Forms.Button btbCancelar;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Button bntRemover;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.NumericUpDown nudQuantidade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtComanda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
     }
 }
