@@ -32,6 +32,8 @@ namespace HAMBURGUERIA_v1
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linha = dgvProduto.SelectedRows;
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
 
             dgvPedido.Rows.Add(linha[0].Cells[0].Value.ToString(), linha[0].Cells[1].Value.ToString(), linha[0].Cells[2].Value.ToString(),nudQuantidade.Value);
 
@@ -42,6 +44,8 @@ namespace HAMBURGUERIA_v1
 
         private void bntRemover_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
             dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index);
 
             DataGridViewSelectedRowCollection linha = dgvProduto.SelectedRows;
@@ -52,11 +56,15 @@ namespace HAMBURGUERIA_v1
 
         private void btbCancelar_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
             this.Close();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
             Pedido EnviarPedido = new Pedido();
             DataGridViewSelectedRowCollection linha = dgvProduto.SelectedRows;
 
@@ -66,6 +74,7 @@ namespace HAMBURGUERIA_v1
             EnviarPedido.Valor_pedido = Convert.ToDecimal(txtTotal.Text);
             EnviarPedido.Quant_produto = Convert.ToString(txtQuantidade.Text);
             EnviarPedido.Num_comanda =   txtComanda.Text;
+            EnviarPedido.Status_comanda = true;
 
           EnviarPedido.AdicionarPedido();///
            //num_item = EnviarPedido.AdicionarItemPedido();

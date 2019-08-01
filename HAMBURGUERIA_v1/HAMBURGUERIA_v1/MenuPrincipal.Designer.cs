@@ -361,7 +361,6 @@
             this.button1.Size = new System.Drawing.Size(68, 51);
             this.button1.TabIndex = 28;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // MenuPrincipal
             // 
@@ -397,6 +396,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

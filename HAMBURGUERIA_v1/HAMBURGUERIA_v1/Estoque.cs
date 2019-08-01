@@ -28,7 +28,8 @@ namespace HAMBURGUERIA_v1
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
             DataGridViewSelectedRowCollection linha = dgvTodosProdutos.SelectedRows;
 
             if (linha.Count != 1)
@@ -61,11 +62,14 @@ namespace HAMBURGUERIA_v1
 
         private void dgvTodosProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
 
             DataGridViewSelectedRowCollection linha_selecionada = dgvTodosProdutos.SelectedRows;
 
@@ -88,12 +92,16 @@ namespace HAMBURGUERIA_v1
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             Form1 addProd = new Form1();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
 
             addProd.ShowDialog();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
             this.Close();
         }
     }

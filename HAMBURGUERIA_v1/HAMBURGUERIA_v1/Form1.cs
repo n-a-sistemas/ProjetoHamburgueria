@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HAMBURGUERIA_v1
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form 
     {
         public Form1()
         {
@@ -26,7 +26,8 @@ namespace HAMBURGUERIA_v1
 
         private void BtnSalvar_produto_Click(object sender, EventArgs e)
         {
-            
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
             Produto produto = new Produto();
 
             produto.Nome_produto = txtNome_produto.Text;
@@ -160,6 +161,8 @@ namespace HAMBURGUERIA_v1
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
             this.Close();
         }
 
@@ -170,12 +173,14 @@ namespace HAMBURGUERIA_v1
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -185,7 +190,14 @@ namespace HAMBURGUERIA_v1
 
         private void Label_Descrição_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Recarrega();
         }
     }
 }

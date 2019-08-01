@@ -19,10 +19,28 @@ namespace HAMBURGUERIA_v1
         private string quant_produto;
         private string num_mesa;
         private string cod_cliente;
+        private bool status_comanda;
+        private byte status2;
 
 
 
         conectaBD BD = new conectaBD();
+
+
+        public byte Status2
+        {
+            get { return status2; }
+            set { status2 = value; }
+
+        }
+
+
+
+        public bool Status_comanda
+        {
+            get { return status_comanda; }
+            set { status_comanda = value; }
+        }
 
         public int Num_pedido
         {
@@ -72,9 +90,9 @@ namespace HAMBURGUERIA_v1
             int exOK = 0;
             try
             {
-                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO PEDIDO (num_comanda,valor_pedido, observacoes,quant_produto) " +
-                                        " values ('{0}','{1}','{2}','{3}')",
-                                                num_comanda,valor_pedido, observacoes,quant_produto);
+                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO PEDIDO (num_comanda,valor_pedido, observacoes,quant_produto,status_comanda) " +
+                                        " values ('{0}','{1}','{2}','{3}','{4}')",
+                                                num_comanda,valor_pedido, observacoes,quant_produto,status_comanda);
 
                 exOK = BD.ExecutaComando(false);
 
@@ -94,15 +112,11 @@ namespace HAMBURGUERIA_v1
             }
         }
 
-        public DataTable PesquisaProduto(String nome_pedido)
+        public DataTable PesquisaComandasAbertas()
         {
             try
             {
-                BD._sql = "SELECT p.cod_produto as 'Cod. Produto', p.nome_produto as 'Nome do Produto', p.valor_produto as 'Valor do Produto'" +
-                           " FROM PRODUTO P" +
-                            " LEFT JOIN BEBIDA B ON P.COD_PRODUTO = B.COD_PRODUTO " +
-                            " LEFT JOIN COMIDA C ON P.COD_PRODUTO = C.COD_PRODUTO " +
-                        " WHERE p.nome_produto LIKE '%" + nome_pedido + "%'";
+                BD._sql = "SELECT num_comanda FROM pedido WHERE status_comanda = 1";
 
                 return BD.ExecutaSelect();
             }
@@ -112,6 +126,5 @@ namespace HAMBURGUERIA_v1
 
             return null;
         }
-       
     }
 }
