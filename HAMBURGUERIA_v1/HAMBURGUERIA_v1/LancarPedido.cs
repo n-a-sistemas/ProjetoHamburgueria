@@ -15,27 +15,28 @@ namespace HAMBURGUERIA_v1
         public LancarPedido()
         {
             InitializeComponent();
+
         }
+        
+        
 
-        int num_item;
-
-
-
+       
 
         private void txtQuantidade_Produto_TextChanged_1(object sender, EventArgs e)
         {
-            Pedido PesquisaProduto = new Pedido();
-            dgvProduto.DataSource = PesquisaProduto.PesquisaProduto(txtQuantidade_Produto.Text);
+            Pedido PesquisaPedido = new Pedido();
+            dgvProduto.DataSource = PesquisaPedido.PesquisaPedido(txtQuantidade_Produto.Text);
             dgvProduto.AutoResizeColumns();
+            
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linha = dgvProduto.SelectedRows;
             MenuPrincipal menu = new MenuPrincipal();
-            menu.Recarrega();
 
             dgvPedido.Rows.Add(linha[0].Cells[0].Value.ToString(), linha[0].Cells[1].Value.ToString(), linha[0].Cells[2].Value.ToString(),nudQuantidade.Value);
+            dgvPedido.AutoResizeColumns();
 
 
             txtTotal.Text = Convert.ToString(Convert.ToDecimal(txtTotal.Text) + Convert.ToDecimal(linha[0].Cells[2].Value) * nudQuantidade.Value);
@@ -102,9 +103,45 @@ namespace HAMBURGUERIA_v1
             }
 
         }
+
+        private void txtComanda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LancarPedido_Load(object sender, EventArgs e)
+        {
+            Pedido pedidos = new Pedido();
+
+            if (txtComanda.Text != "")
+            { 
+                pedidos.Id_comanda = Convert.ToInt32(txtComanda.Text);
+                dgvPedido.DataSource = pedidos.PesquisaComanda();
+                dgvPedido.AutoResizeColumns();
+            }
+
+        }
+
+        private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        
+    }
+
+
+
+
+
+
     }
                 
                
 
     
-}
+

@@ -83,6 +83,12 @@ namespace HAMBURGUERIA_v1
             get { return cod_cliente; }
             set { cod_cliente = value; }
         }
+        private int id_comanda;
+        public int Id_comanda
+        {
+            get { return id_comanda; }
+            set { id_comanda = value; }
+        }
 
 
         public void AdicionarPedido()
@@ -126,5 +132,42 @@ namespace HAMBURGUERIA_v1
 
             return null;
         }
+
+        public DataTable PesquisaComanda()
+        {
+            try
+            {
+                BD._sql = "SELECT P.nome_produto as 'Nome do Produto', I.quantidade_itens as 'Quantidade de itens', i.valor_por_item as 'Valor de cada item'" +
+                           " FROM item_pedido I " +
+                            "JOIN produto P ON I.cod_produto = p.cod_produto " +
+                        " WHERE num_comanda = " + id_comanda.ToString();
+
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
+        }
+        public DataTable PesquisaPedido(String nome_caixa)
+        {
+            try
+            {
+                BD._sql = "SELECT p.cod_produto as 'Cod. Produto', p.nome_produto as 'Nome do Produto', p.valor_produto as 'Valor do Produto'" +
+                           " FROM PRODUTO P" +
+                            " LEFT JOIN BEBIDA B ON P.COD_PRODUTO = B.COD_PRODUTO " +
+                            " LEFT JOIN COMIDA C ON P.COD_PRODUTO = C.COD_PRODUTO " +
+                        " WHERE p.nome_produto LIKE '%" + nome_caixa + "%'";
+
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
+        }
+
     }
 }

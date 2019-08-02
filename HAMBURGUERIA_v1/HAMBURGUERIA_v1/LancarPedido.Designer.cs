@@ -45,10 +45,10 @@
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtComanda = new System.Windows.Forms.TextBox();
+            this.quantidade_itens = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
@@ -70,7 +70,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(545, 103);
+            this.label3.Location = new System.Drawing.Point(464, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 2;
@@ -106,14 +106,15 @@
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cod_produto,
-            this.NomeProduto,
-            this.Valor,
-            this.Quantidade});
-            this.dgvPedido.Location = new System.Drawing.Point(602, 103);
+            this.nome_produto,
+            this.valor_produto,
+            this.quantidade_itens});
+            this.dgvPedido.Location = new System.Drawing.Point(521, 103);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.ReadOnly = true;
             this.dgvPedido.Size = new System.Drawing.Size(347, 150);
             this.dgvPedido.TabIndex = 6;
+            this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
             // 
             // dgvProduto
             // 
@@ -122,12 +123,13 @@
             this.dgvProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduto.Location = new System.Drawing.Point(73, 103);
+            this.dgvProduto.Location = new System.Drawing.Point(22, 103);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduto.Size = new System.Drawing.Size(337, 150);
             this.dgvProduto.TabIndex = 7;
+            this.dgvProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellContentClick);
             // 
             // txtObservacoes
             // 
@@ -142,7 +144,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdicionar.Location = new System.Drawing.Point(72, 259);
+            this.btnAdicionar.Location = new System.Drawing.Point(21, 259);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 28);
             this.btnAdicionar.TabIndex = 9;
@@ -175,7 +177,7 @@
             // bntRemover
             // 
             this.bntRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bntRemover.Location = new System.Drawing.Point(745, 259);
+            this.bntRemover.Location = new System.Drawing.Point(664, 259);
             this.bntRemover.Name = "bntRemover";
             this.bntRemover.Size = new System.Drawing.Size(75, 28);
             this.bntRemover.TabIndex = 12;
@@ -186,7 +188,7 @@
             // nudQuantidade
             // 
             this.nudQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nudQuantidade.Location = new System.Drawing.Point(335, 265);
+            this.nudQuantidade.Location = new System.Drawing.Point(284, 265);
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(75, 20);
             this.nudQuantidade.TabIndex = 13;
@@ -200,7 +202,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(235, 267);
+            this.label5.Location = new System.Drawing.Point(184, 267);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 14;
@@ -210,7 +212,7 @@
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(602, 267);
+            this.txtTotal.Location = new System.Drawing.Point(521, 267);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(116, 20);
             this.txtTotal.TabIndex = 15;
@@ -220,7 +222,7 @@
             // 
             this.txtQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtQuantidade.Enabled = false;
-            this.txtQuantidade.Location = new System.Drawing.Point(602, 297);
+            this.txtQuantidade.Location = new System.Drawing.Point(521, 297);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(116, 20);
             this.txtQuantidade.TabIndex = 16;
@@ -242,30 +244,31 @@
             this.txtComanda.Name = "txtComanda";
             this.txtComanda.Size = new System.Drawing.Size(243, 20);
             this.txtComanda.TabIndex = 18;
+            this.txtComanda.TextChanged += new System.EventHandler(this.txtComanda_TextChanged);
+            // 
+            // quantidade_itens
+            // 
+            this.quantidade_itens.HeaderText = "Quantidade de Itens";
+            this.quantidade_itens.Name = "quantidade_itens";
+            this.quantidade_itens.ReadOnly = true;
+            // 
+            // valor_produto
+            // 
+            this.valor_produto.HeaderText = "Valor Produto";
+            this.valor_produto.Name = "valor_produto";
+            this.valor_produto.ReadOnly = true;
+            // 
+            // nome_produto
+            // 
+            this.nome_produto.HeaderText = "Nome Produto";
+            this.nome_produto.Name = "nome_produto";
+            this.nome_produto.ReadOnly = true;
             // 
             // cod_produto
             // 
-            this.cod_produto.HeaderText = "Código do produto";
+            this.cod_produto.HeaderText = "Codigo Produto";
             this.cod_produto.Name = "cod_produto";
             this.cod_produto.ReadOnly = true;
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.HeaderText = "Nome do Produto";
-            this.NomeProduto.Name = "NomeProduto";
-            this.NomeProduto.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
             // 
             // LancarPedido
             // 
@@ -291,6 +294,7 @@
             this.Controls.Add(this.label2);
             this.Name = "LancarPedido";
             this.Text = "LancarPedido";
+            this.Load += new System.EventHandler(this.LancarPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
@@ -304,7 +308,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtQuantidade_Produto;
-        private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.DataGridView dgvProduto;
         private System.Windows.Forms.TextBox txtObservacoes;
         private System.Windows.Forms.Button btnAdicionar;
@@ -316,10 +319,11 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtComanda;
+        public System.Windows.Forms.TextBox txtComanda;
+        public System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade_itens;
     }
 }

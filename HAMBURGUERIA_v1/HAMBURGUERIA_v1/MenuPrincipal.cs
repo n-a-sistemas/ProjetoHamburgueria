@@ -44,7 +44,7 @@ namespace HAMBURGUERIA_v1
         private void lançarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LancarPedido addProd = new LancarPedido();
-            //addProd.WindowState = FormWindowState.Maximized;
+            
 
             addProd.ShowDialog();
             Recarrega();
@@ -197,6 +197,263 @@ namespace HAMBURGUERIA_v1
             Recarrega_botao();
             RecarregaComandas();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button1.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+               
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button2.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button3.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button4.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button5.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button6.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button7.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button8.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button9.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (button10.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button10.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button11.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button12.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button13.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button14.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button15.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button16.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button25.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button24.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button23.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button22.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "")
+            {
+                LancarPedido addProd = new LancarPedido();
+                addProd.txtComanda.Text = button21.Text;
+                addProd.ShowDialog();
+                Pedido pedidos = new Pedido();
+                pedidos.Id_comanda = Convert.ToInt32(addProd.txtComanda.Text);
+            }
+        }
+        
+            
+       
     }
     }
 
