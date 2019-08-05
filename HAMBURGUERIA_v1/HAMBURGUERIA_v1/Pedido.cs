@@ -22,10 +22,7 @@ namespace HAMBURGUERIA_v1
         private bool status_comanda;
         private byte status2;
 
-
-
         conectaBD BD = new conectaBD();
-
 
         public byte Status2
         {
@@ -33,8 +30,6 @@ namespace HAMBURGUERIA_v1
             set { status2 = value; }
 
         }
-
-
 
         public bool Status_comanda
         {
@@ -137,7 +132,7 @@ namespace HAMBURGUERIA_v1
         {
             try
             {
-                BD._sql = "SELECT P.nome_produto as 'Nome do Produto', I.quantidade_itens as 'Quantidade de itens', i.valor_por_item as 'Valor de cada item'" +
+                BD._sql = "SELECT P.nome_produto as 'Nome do Produto', I.quantidade_itens as 'Quantidade de itens', i.valor_por_item as 'Valor de cada item',i.num_item" +
                            " FROM item_pedido I " +
                             "JOIN produto P ON I.cod_produto = p.cod_produto " +
                         " WHERE num_comanda = " + id_comanda.ToString();

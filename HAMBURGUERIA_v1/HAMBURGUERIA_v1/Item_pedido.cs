@@ -80,6 +80,34 @@ namespace HAMBURGUERIA_v1
             return id;
         }
 
+        public void RemoverItemPedido()
+        {
+            try
+            {
+                int exOK = 0;
+                BD._sql = String.Format("DELETE FROM ITEM_PEDIDO WHERE num_item = {0}", num_item);
+
+                exOK = BD.ExecutaComando(false);
+
+                if (exOK < 0)
+                {
+                    MessageBox.Show("Erro ao deletar produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return;
+
+
+        }
+
 
 
 

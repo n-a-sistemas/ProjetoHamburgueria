@@ -33,25 +33,29 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtQuantidade_Produto = new System.Windows.Forms.TextBox();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.cod_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade_itens = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.txtObservacoes = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btbCancelar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
-            this.bntRemover = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtComanda = new System.Windows.Forms.TextBox();
-            this.quantidade_itens = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvComanda = new System.Windows.Forms.DataGridView();
+            this.btnAdicionar2 = new System.Windows.Forms.Button();
+            this.btnRemover2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -116,6 +120,30 @@
             this.dgvPedido.TabIndex = 6;
             this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
             // 
+            // cod_produto
+            // 
+            this.cod_produto.HeaderText = "Codigo Produto";
+            this.cod_produto.Name = "cod_produto";
+            this.cod_produto.ReadOnly = true;
+            // 
+            // nome_produto
+            // 
+            this.nome_produto.HeaderText = "Nome Produto";
+            this.nome_produto.Name = "nome_produto";
+            this.nome_produto.ReadOnly = true;
+            // 
+            // valor_produto
+            // 
+            this.valor_produto.HeaderText = "Valor Produto";
+            this.valor_produto.Name = "valor_produto";
+            this.valor_produto.ReadOnly = true;
+            // 
+            // quantidade_itens
+            // 
+            this.quantidade_itens.HeaderText = "Quantidade de Itens";
+            this.quantidade_itens.Name = "quantidade_itens";
+            this.quantidade_itens.ReadOnly = true;
+            // 
             // dgvProduto
             // 
             this.dgvProduto.AllowUserToAddRows = false;
@@ -150,18 +178,19 @@
             this.btnAdicionar.TabIndex = 9;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Visible = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // btbCancelar
+            // btnCancelar
             // 
-            this.btbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btbCancelar.Location = new System.Drawing.Point(864, 364);
-            this.btbCancelar.Name = "btbCancelar";
-            this.btbCancelar.Size = new System.Drawing.Size(75, 40);
-            this.btbCancelar.TabIndex = 10;
-            this.btbCancelar.Text = "Cancelar";
-            this.btbCancelar.UseVisualStyleBackColor = true;
-            this.btbCancelar.Click += new System.EventHandler(this.btbCancelar_Click);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(864, 364);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 40);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btbCancelar_Click);
             // 
             // btnEnviar
             // 
@@ -174,16 +203,17 @@
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
-            // bntRemover
+            // btnRemover
             // 
-            this.bntRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bntRemover.Location = new System.Drawing.Point(664, 259);
-            this.bntRemover.Name = "bntRemover";
-            this.bntRemover.Size = new System.Drawing.Size(75, 28);
-            this.bntRemover.TabIndex = 12;
-            this.bntRemover.Text = "Remover";
-            this.bntRemover.UseVisualStyleBackColor = true;
-            this.bntRemover.Click += new System.EventHandler(this.bntRemover_Click);
+            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRemover.Location = new System.Drawing.Point(664, 259);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(75, 28);
+            this.btnRemover.TabIndex = 12;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Visible = false;
+            this.btnRemover.Click += new System.EventHandler(this.bntRemover_Click);
             // 
             // nudQuantidade
             // 
@@ -212,7 +242,7 @@
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(521, 267);
+            this.txtTotal.Location = new System.Drawing.Point(521, 260);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(116, 20);
             this.txtTotal.TabIndex = 15;
@@ -222,7 +252,7 @@
             // 
             this.txtQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtQuantidade.Enabled = false;
-            this.txtQuantidade.Location = new System.Drawing.Point(521, 297);
+            this.txtQuantidade.Location = new System.Drawing.Point(521, 286);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(116, 20);
             this.txtQuantidade.TabIndex = 16;
@@ -246,44 +276,61 @@
             this.txtComanda.TabIndex = 18;
             this.txtComanda.TextChanged += new System.EventHandler(this.txtComanda_TextChanged);
             // 
-            // quantidade_itens
+            // dgvComanda
             // 
-            this.quantidade_itens.HeaderText = "Quantidade de Itens";
-            this.quantidade_itens.Name = "quantidade_itens";
-            this.quantidade_itens.ReadOnly = true;
+            this.dgvComanda.AllowUserToAddRows = false;
+            this.dgvComanda.AllowUserToDeleteRows = false;
+            this.dgvComanda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvComanda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComanda.Location = new System.Drawing.Point(521, 103);
+            this.dgvComanda.Name = "dgvComanda";
+            this.dgvComanda.ReadOnly = true;
+            this.dgvComanda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvComanda.Size = new System.Drawing.Size(347, 150);
+            this.dgvComanda.TabIndex = 19;
+            this.dgvComanda.Visible = false;
+            this.dgvComanda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // valor_produto
+            // btnAdicionar2
             // 
-            this.valor_produto.HeaderText = "Valor Produto";
-            this.valor_produto.Name = "valor_produto";
-            this.valor_produto.ReadOnly = true;
+            this.btnAdicionar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAdicionar2.Location = new System.Drawing.Point(102, 259);
+            this.btnAdicionar2.Name = "btnAdicionar2";
+            this.btnAdicionar2.Size = new System.Drawing.Size(75, 28);
+            this.btnAdicionar2.TabIndex = 20;
+            this.btnAdicionar2.Text = "ADICIONAR";
+            this.btnAdicionar2.UseVisualStyleBackColor = true;
+            this.btnAdicionar2.Click += new System.EventHandler(this.btnAdicionar2_Click);
             // 
-            // nome_produto
+            // btnRemover2
             // 
-            this.nome_produto.HeaderText = "Nome Produto";
-            this.nome_produto.Name = "nome_produto";
-            this.nome_produto.ReadOnly = true;
-            // 
-            // cod_produto
-            // 
-            this.cod_produto.HeaderText = "Codigo Produto";
-            this.cod_produto.Name = "cod_produto";
-            this.cod_produto.ReadOnly = true;
+            this.btnRemover2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRemover2.Location = new System.Drawing.Point(763, 260);
+            this.btnRemover2.Name = "btnRemover2";
+            this.btnRemover2.Size = new System.Drawing.Size(75, 27);
+            this.btnRemover2.TabIndex = 21;
+            this.btnRemover2.Text = "REMOVER";
+            this.btnRemover2.UseVisualStyleBackColor = true;
+            this.btnRemover2.Click += new System.EventHandler(this.btnRemover2_Click);
             // 
             // LancarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 406);
+            this.Controls.Add(this.btnRemover2);
+            this.Controls.Add(this.btnAdicionar2);
+            this.Controls.Add(this.dgvComanda);
             this.Controls.Add(this.txtComanda);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nudQuantidade);
-            this.Controls.Add(this.bntRemover);
+            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.btbCancelar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtObservacoes);
             this.Controls.Add(this.dgvProduto);
@@ -298,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComanda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,9 +359,9 @@
         private System.Windows.Forms.DataGridView dgvProduto;
         private System.Windows.Forms.TextBox txtObservacoes;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.Button btbCancelar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.Button bntRemover;
+        private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.NumericUpDown nudQuantidade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTotal;
@@ -325,5 +373,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nome_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade_itens;
+        public System.Windows.Forms.DataGridView dgvComanda;
+        private System.Windows.Forms.Button btnAdicionar2;
+        private System.Windows.Forms.Button btnRemover2;
     }
 }
